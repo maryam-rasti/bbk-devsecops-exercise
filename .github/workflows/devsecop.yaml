@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: install dependencies
+        run: npm install 
+
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
 
