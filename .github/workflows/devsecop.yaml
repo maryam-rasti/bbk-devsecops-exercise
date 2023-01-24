@@ -1,0 +1,21 @@
+name: DevSecOps Pipeline
+
+on: 
+  push: 
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-dummy:
+    name: Build Echo Statement 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo building Going on
+        run: echo "Building going on"
+
+  deploy-dummy:
+    name: Deploy echo statement
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Deploying going on
+        run: echo "Deploying going on"
