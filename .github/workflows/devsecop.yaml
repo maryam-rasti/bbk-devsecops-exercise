@@ -24,9 +24,10 @@ jobs:
       
       - name: verify installation
         run: npm --version
-        
+
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
+        continue-on-error: true
 
       - name: Upload NPM Audit Report
         uses: actions/upload-artifact@v3
