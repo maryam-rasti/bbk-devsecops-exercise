@@ -21,7 +21,10 @@ jobs:
 
       - name: install dependencies
         run: npm install 
-
+      
+      - name: verify installation
+        run: npm --version
+        
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
 
