@@ -29,7 +29,8 @@ jobs:
           path: npm-audit.json
 
   build-dummy:
-    name: Build Echo Statement 
+    name: Build Echo Statement
+    needs: component-analysis-npm-audit
     runs-on: ubuntu-latest
     steps:
       - name: Echo building Going on
@@ -39,6 +40,7 @@ jobs:
   deploy-dummy:
     name: Deploy echo statement
     runs-on: ubuntu-latest
+    needs: build-dummy
     steps:
       - name: Echo Deploying going on
         run: echo "Deploying going on"
