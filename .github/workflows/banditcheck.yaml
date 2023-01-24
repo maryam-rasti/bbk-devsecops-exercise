@@ -1,0 +1,18 @@
+name: Banditcheck
+
+on: 
+  push: 
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+
+  bandit-check:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Run Bandit Report
+        uses: libertyy/py3-bandit-check@v2
+
